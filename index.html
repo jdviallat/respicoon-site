@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Respicoon — Cohérence cardiaque & respiration guidée</title>
+<meta name="description" content="Respicoon, par Bengacoon : 17 séances de cohérence cardiaque et de respiration guidée, un souffle animé, de vraies ambiances sonores et un suivi doux. 100 % gratuit, 100 % hors ligne.">
+<link rel="icon" href="assets/favicon.png">
+<meta property="og:title" content="Respicoon — Cohérence cardiaque & respiration guidée">
+<meta property="og:description" content="17 séances guidées, un souffle animé, de vraies ambiances et un suivi doux. 100 % gratuit, 100 % hors ligne.">
+<meta property="og:image" content="assets/icon.png">
+<style>
+  :root{
+    --nuit:#213A4E; --nuit-fonce:#16293A; --sauge:#7FB394; --sauge-clair:#A9D0B8;
+    --or:#D6B678; --or-clair:#ECD9A9; --creme:#F5F3EC; --creme-2:#EAE6DA;
+    --texte:#233038; --muted:#6C7680;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--texte);background:var(--creme);line-height:1.6}
+  a{color:inherit}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+
+  header{position:sticky;top:0;z-index:20;background:rgba(245,243,236,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--creme-2)}
+  header .wrap{display:flex;align-items:center;gap:12px;height:64px}
+  header img{width:36px;height:36px;border-radius:9px}
+  header .brand{font-weight:800;font-size:19px;letter-spacing:.2px}
+  header .brand small{display:block;font-weight:600;font-size:11px;color:var(--muted);letter-spacing:.3px}
+  header nav{margin-left:auto;display:flex;gap:22px;font-size:14px;font-weight:600}
+  header nav a{color:var(--muted);text-decoration:none}
+  header nav a:hover{color:var(--nuit)}
+  @media(max-width:640px){header nav{display:none}}
+
+  .hero{background:linear-gradient(160deg,var(--nuit) 0%,var(--nuit-fonce) 100%);color:#fff;text-align:center;padding:74px 0 88px;position:relative;overflow:hidden}
+  .hero .ring{position:absolute;border-radius:50%;border:2px solid var(--sauge);opacity:.10}
+  .hero .r1{width:340px;height:340px;top:-90px;left:-70px}
+  .hero .r2{width:220px;height:220px;top:-40px;left:-10px;opacity:.07}
+  .hero .r3{width:300px;height:300px;bottom:-110px;right:-60px;border-color:var(--or)}
+  .hero .r4{width:160px;height:160px;bottom:-40px;right:0;border-color:var(--or);opacity:.07}
+  .hero .logo{width:98px;height:98px;border-radius:24px;box-shadow:0 12px 34px rgba(0,0,0,.32);margin-bottom:22px;position:relative}
+  .hero .par{color:var(--or-clair);font-weight:700;font-size:14px;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;position:relative}
+  .hero h1{font-size:44px;line-height:1.1;font-weight:800;letter-spacing:-.5px;position:relative}
+  .hero p.lead{max-width:610px;margin:18px auto 0;font-size:18px;color:#DCE7E2;position:relative}
+  @media(max-width:640px){.hero h1{font-size:33px}.hero p.lead{font-size:16px}}
+
+  .stores{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:32px;position:relative}
+  .store{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--nuit);font-weight:700;padding:13px 22px;border-radius:14px;text-decoration:none;font-size:15px;box-shadow:0 6px 18px rgba(0,0,0,.20);transition:transform .15s}
+  .store:hover{transform:translateY(-2px)}
+  .store.soon{background:rgba(255,255,255,.14);color:#fff;box-shadow:none;border:1px solid rgba(255,255,255,.3)}
+  .store .em{font-size:20px}
+  .store small{display:block;font-weight:600;font-size:11px;opacity:.7}
+
+  section{padding:66px 0}
+  .eyebrow{color:var(--or);font-weight:800;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;text-align:center}
+  h2{font-size:31px;font-weight:800;text-align:center;margin:8px 0 8px;letter-spacing:-.3px}
+  .sub{text-align:center;color:var(--muted);max-width:640px;margin:0 auto 42px;font-size:16px}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:860px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  .card{background:#fff;border:1px solid var(--creme-2);border-radius:18px;padding:26px 22px;transition:transform .15s,box-shadow .15s}
+  .card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(33,58,78,.10)}
+  .card .em{font-size:30px;display:inline-block;margin-bottom:12px}
+  .card h3{font-size:18px;font-weight:800;margin-bottom:7px;color:var(--nuit)}
+  .card p{color:var(--muted);font-size:14.5px}
+
+  .free{background:var(--creme-2)}
+  .free .box{background:#fff;border:1px solid #E4DECB;border-radius:22px;padding:40px 34px;text-align:center;max-width:720px;margin:0 auto;position:relative}
+  .free .price{display:inline-block;background:var(--sauge);color:#173226;font-weight:800;padding:6px 16px;border-radius:999px;font-size:14px;margin-bottom:14px}
+  .free h2{margin-top:0}
+  .free ul{list-style:none;display:inline-block;text-align:left;margin:18px auto 0;color:var(--texte)}
+  .free li{padding:5px 0 5px 30px;position:relative;font-size:15px}
+  .free li::before{content:"🕊️";position:absolute;left:0}
+  .free .note{color:var(--muted);font-size:14px;margin-top:20px}
+
+  .privacy{background:var(--nuit);color:#DCE7E2;text-align:center}
+  .privacy h2{color:#fff}
+  .privacy .sub{color:#B9CBC3}
+
+  footer{background:var(--nuit-fonce);color:#AFC1BA;text-align:center;padding:40px 0;font-size:13.5px}
+  footer a{color:var(--or-clair);text-decoration:none}
+  footer .disc{max-width:660px;margin:16px auto 0;font-size:12px;color:#89A096;line-height:1.5}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <img src="assets/icon.png" alt="Respicoon">
+    <div class="brand">Respicoon<small>par Bengacoon</small></div>
+    <nav>
+      <a href="#fonctions">Fonctions</a>
+      <a href="#gratuit">Gratuit</a>
+      <a href="#confidentialite">Confidentialité</a>
+      <a href="privacy.html">Mentions</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <span class="ring r1"></span><span class="ring r2"></span><span class="ring r3"></span><span class="ring r4"></span>
+  <div class="wrap">
+    <img class="logo" src="assets/icon.png" alt="Respicoon">
+    <div class="par">par Bengacoon</div>
+    <h1>Respicoon</h1>
+    <p class="lead">Cohérence cardiaque & respiration guidée. Quelques minutes par jour, souffle après souffle, vers plus de calme, de clarté, d'énergie et un meilleur sommeil.</p>
+    <div class="stores">
+      <a class="store soon" href="https://play.google.com/store/apps/details?id=com.bengacoon.respire">
+        <span class="em">▶</span><span><small>Bientôt sur</small>Google&nbsp;Play</span>
+      </a>
+      <a class="store soon" href="https://apps.apple.com/app/id6785929605">
+        <span class="em"></span><span><small>Bientôt sur</small>App&nbsp;Store</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<section id="fonctions">
+  <div class="wrap">
+    <div class="eyebrow">Ce que fait l'app</div>
+    <h2>Respirer, tout simplement</h2>
+    <p class="sub">Un accompagnement doux et élégant — sans compte, sans jargon, sans connexion.</p>
+    <div class="grid">
+      <div class="card">
+        <span class="em">🕊️</span><h3>17 séances guidées</h3>
+        <p>De la cohérence cardiaque de référence (Colibri 365) au sommeil, à l'anti-stress, la concentration, l'énergie ou l'ancrage émotionnel — une séance pour chaque moment de la journée.</p>
+      </div>
+      <div class="card">
+        <span class="em">🫧</span><h3>Séance immersive</h3>
+        <p>Un souffle animé vous guide avec deux repères clairs (jusqu'où inspirer, jusqu'où expirer) et un colibri qui bat des ailes. 6 visualisations au choix : cocon de lumière, lotus, lune…</p>
+      </div>
+      <div class="card">
+        <span class="em">🎧</span><h3>Ambiances & vibrations</h3>
+        <p>11 ambiances sonores réelles (vagues, forêt, pluie, feu, bol tibétain, battements de cœur…) — ou vos propres sons. Vibrations guidées pour respirer les yeux fermés.</p>
+      </div>
+      <div class="card">
+        <span class="em">🗺️</span><h3>Parcours & programmes</h3>
+        <p>Des parcours sur plusieurs jours (mieux dormir, anti-stress, se recentrer) et un créateur de programme personnalisé, à votre rythme.</p>
+      </div>
+      <div class="card">
+        <span class="em">📊</span><h3>Journal & suivi</h3>
+        <p>Bilans émotionnels avant/après, statistiques de la semaine, badges de régularité et export PDF de votre progression.</p>
+      </div>
+      <div class="card">
+        <span class="em">🌙</span><h3>Rappels & confort</h3>
+        <p>Rappels doux (matin, midi, soir), mode thérapeute, thème clair/sombre, 9 langues, et sauvegarde/transfert de vos données entre appareils.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gratuit" class="free">
+  <div class="wrap">
+    <div class="box">
+      <span class="price">100 % gratuit</span>
+      <h2>Tout est inclus, sans abonnement</h2>
+      <p class="sub" style="margin-bottom:6px">Aucune publicité, aucun achat intégré — vous profitez de toute l'application librement.</p>
+      <ul>
+        <li>Les 17 séances guidées et le créateur de programme</li>
+        <li>Toutes les ambiances, visualisations et vibrations</li>
+        <li>Parcours multi-jours, journal, suivi et export PDF</li>
+        <li>Disponible en 9 langues, sur mobile, Mac et PC</li>
+      </ul>
+      <p class="note">Respirez librement : Respicoon fonctionne entièrement hors ligne, sans compte à créer.</p>
+    </div>
+  </div>
+</section>
+
+<section id="confidentialite" class="privacy">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--or-clair)">Vos données, chez vous</div>
+    <h2>Rien ne quitte votre appareil</h2>
+    <p class="sub">Aucune donnée envoyée sur Internet, aucun compte à créer. Vos séances et bilans restent chez vous, avec export et import quand vous le souhaitez.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <strong>Respicoon</strong> — par Bengacoon · Disponible en 9 langues<br>
+    <a href="privacy.html">Politique de confidentialité</a> &nbsp;·&nbsp; © 2026 Bengacoon
+    <p class="disc">Respicoon est une application de bien-être. Elle n'établit aucun diagnostic, ne constitue pas un traitement et ne remplace pas l'avis d'un professionnel de santé. En cas de trouble cardiaque ou respiratoire, demandez conseil à votre médecin.</p>
+  </div>
+</footer>
+
+</body>
+</html>
