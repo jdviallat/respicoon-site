@@ -19,6 +19,8 @@
   header nav{margin-left:auto;display:flex;gap:8px 16px;font-size:14px;font-weight:600;flex-wrap:wrap}
   header nav a{color:var(--muted);text-decoration:none;white-space:nowrap;margin:0}
   header nav a:hover,header nav a.active{color:var(--nuit)}
+  header .langsel{margin-left:14px;border:1px solid var(--creme-2);background:transparent;color:var(--muted);border-radius:8px;padding:5px 8px;font:inherit;font-size:13px;font-weight:600;cursor:pointer}
+  @media(max-width:560px){header .langsel{margin-left:0;width:100%}}
   @media(max-width:560px){header nav{margin-left:0;width:100%;gap:6px 14px;font-size:13px;padding-bottom:2px}}
   main{padding:48px 0 60px}
   h1{font-size:30px;font-weight:800;margin-bottom:6px;letter-spacing:-.3px}
@@ -38,52 +40,55 @@
     <img src="assets/icon.png" alt="Respicoon">
     <div class="brand">Respicoon<small>PAR BENGACOON</small></div>
     <nav>
-      <a href="index.html">Accueil</a>
-      <a href="index.html#fonctions">Fonctions</a>
-      <a href="guide.html">Guide</a>
-      <a href="index.html#gratuit">Gratuit</a>
-      <a href="privacy.html" class="active">Confidentialité</a>
+      <a href="index.html" data-i18n="nav.home">Accueil</a>
+      <a href="index.html#fonctions" data-i18n="nav.feat">Fonctions</a>
+      <a href="guide.html" data-i18n="nav.guide">Guide</a>
+      <a href="index.html#gratuit" data-i18n="nav.free">Gratuit</a>
+      <a href="privacy.html" class="active" data-i18n="nav.privacy">Confidentialité</a>
     </nav>
+    <select id="langSel" class="langsel" aria-label="Language / Langue"></select>
   </div>
 </header>
 <main>
   <div class="wrap">
-    <h1>Politique de confidentialité</h1>
-    <div class="maj">Respicoon, par Bengacoon — Dernière mise à jour : juillet 2026</div>
+    <h1 data-i18n="pv.h1">Politique de confidentialité</h1>
+    <div class="maj" data-i18n="pv.maj">Respicoon, par Bengacoon — Dernière mise à jour : juillet 2026</div>
 
     <div class="box">
-      <p><strong>En résumé :</strong> Respicoon fonctionne <strong>100 % hors ligne</strong>, ne demande <strong>aucun compte</strong> et <strong>ne collecte aucune donnée personnelle</strong>. Tout ce que vous saisissez reste sur votre appareil.</p>
+      <p data-i18n-html="pv.resume"><strong>En résumé :</strong> Respicoon fonctionne <strong>100 % hors ligne</strong>, ne demande <strong>aucun compte</strong> et <strong>ne collecte aucune donnée personnelle</strong>. Tout ce que vous saisissez reste sur votre appareil.</p>
     </div>
 
-    <h2>1. Aucune collecte de données</h2>
-    <p>Respicoon ne collecte, ne transmet et ne revend aucune donnée personnelle. Vos séances, bilans émotionnels, programmes, parcours et réglages sont enregistrés <strong>uniquement en local</strong> sur votre appareil.</p>
+    <h2 data-i18n="pv.h.1">1. Aucune collecte de données</h2>
+    <p data-i18n-html="pv.p.1">Respicoon ne collecte, ne transmet et ne revend aucune donnée personnelle. Vos séances, bilans émotionnels, programmes, parcours et réglages sont enregistrés <strong>uniquement en local</strong> sur votre appareil.</p>
 
-    <h2>2. Aucun compte, aucune publicité</h2>
-    <p>L'application ne nécessite aucune inscription ni connexion. Elle ne contient aucune publicité et aucun traceur analytique.</p>
+    <h2 data-i18n="pv.h.2">2. Aucun compte, aucune publicité</h2>
+    <p data-i18n="pv.p.2">L'application ne nécessite aucune inscription ni connexion. Elle ne contient aucune publicité et aucun traceur analytique.</p>
 
-    <h2>3. Fonctionnement hors ligne</h2>
-    <p>Toutes les fonctions (séances, ambiances, journal, suivi, export) s'utilisent sans connexion Internet. La seule fonction facultative qui consulte Internet est la <strong>vérification des mises à jour</strong> : elle lit un simple fichier de version public et <strong>n'envoie aucune donnée</strong> vous concernant. Vous pouvez ne jamais l'utiliser.</p>
+    <h2 data-i18n="pv.h.3">3. Fonctionnement hors ligne</h2>
+    <p data-i18n-html="pv.p.3">Toutes les fonctions (séances, ambiances, journal, suivi, export) s'utilisent sans connexion Internet. La seule fonction facultative qui consulte Internet est la <strong>vérification des mises à jour</strong> : elle lit un simple fichier de version public et <strong>n'envoie aucune donnée</strong> vous concernant. Vous pouvez ne jamais l'utiliser.</p>
 
-    <h2>4. Vos données vous appartiennent</h2>
-    <p>Vous pouvez à tout moment :</p>
+    <h2 data-i18n="pv.h.4">4. Vos données vous appartiennent</h2>
+    <p data-i18n="pv.p.4">Vous pouvez à tout moment :</p>
     <ul>
-      <li><strong>Exporter</strong> vos données dans un fichier pour les sauvegarder ou les transférer sur un autre appareil ;</li>
-      <li><strong>Importer</strong> une sauvegarde ;</li>
-      <li><strong>Supprimer</strong> l'ensemble de vos données depuis les Réglages, ou en désinstallant l'application.</li>
+      <li data-i18n-html="pv.li.1"><strong>Exporter</strong> vos données dans un fichier pour les sauvegarder ou les transférer sur un autre appareil ;</li>
+      <li data-i18n-html="pv.li.2"><strong>Importer</strong> une sauvegarde ;</li>
+      <li data-i18n-html="pv.li.3"><strong>Supprimer</strong> l'ensemble de vos données depuis les Réglages, ou en désinstallant l'application.</li>
     </ul>
 
-    <h2>5. Permissions</h2>
-    <p>Selon la plateforme, l'application peut demander : les <strong>notifications</strong> (rappels facultatifs), la <strong>vibration</strong> (guidage du souffle) et l'accès à un <strong>fichier</strong> que vous choisissez (import de sons ou de sauvegarde). L'accès à Internet sert uniquement à la vérification des mises à jour.</p>
+    <h2 data-i18n="pv.h.5">5. Permissions</h2>
+    <p data-i18n-html="pv.p.5">Selon la plateforme, l'application peut demander : les <strong>notifications</strong> (rappels facultatifs), la <strong>vibration</strong> (guidage du souffle) et l'accès à un <strong>fichier</strong> que vous choisissez (import de sons ou de sauvegarde). L'accès à Internet sert uniquement à la vérification des mises à jour.</p>
 
-    <h2>6. Bien-être, pas dispositif médical</h2>
-    <p>Respicoon est une application de bien-être. Elle n'établit aucun diagnostic, ne constitue pas un traitement et ne remplace pas l'avis d'un professionnel de santé. En cas de trouble cardiaque ou respiratoire, demandez conseil à votre médecin.</p>
+    <h2 data-i18n="pv.h.6">6. Bien-être, pas dispositif médical</h2>
+    <p data-i18n="pv.p.6">Respicoon est une application de bien-être. Elle n'établit aucun diagnostic, ne constitue pas un traitement et ne remplace pas l'avis d'un professionnel de santé. En cas de trouble cardiaque ou respiratoire, demandez conseil à votre médecin.</p>
 
-    <h2>7. Contact</h2>
-    <p>Pour toute question : <a href="mailto:jdviallat@gmail.com">jdviallat@gmail.com</a>.</p>
+    <h2 data-i18n="pv.h.7">7. Contact</h2>
+    <p data-i18n-html="pv.contact">Pour toute question : <a href="mailto:jdviallat@gmail.com">jdviallat@gmail.com</a>.</p>
   </div>
 </main>
 <footer>
   <div class="wrap">Respicoon — par Bengacoon · <a href="index.html">Accueil</a> · © 2026 Bengacoon</div>
 </footer>
+<script src="i18n-data.js"></script>
+<script src="i18n.js"></script>
 </body>
 </html>

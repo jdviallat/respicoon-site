@@ -29,6 +29,8 @@
   header nav{margin-left:auto;display:flex;gap:8px 16px;font-size:14px;font-weight:600;flex-wrap:wrap}
   header nav a{color:var(--muted);text-decoration:none;white-space:nowrap}
   header nav a:hover,header nav a.active{color:var(--nuit)}
+  header .langsel{margin-left:14px;border:1px solid var(--creme-2);background:transparent;color:var(--muted);border-radius:8px;padding:5px 8px;font:inherit;font-size:13px;font-weight:600;cursor:pointer}
+  @media(max-width:560px){header .langsel{margin-left:0;width:100%}}
   @media(max-width:560px){header nav{margin-left:0;width:100%;gap:6px 14px;font-size:13px;padding-bottom:2px}}
 
   .hero{background:linear-gradient(160deg,var(--nuit) 0%,var(--nuit-fonce) 100%);color:#fff;text-align:center;padding:74px 0 88px;position:relative;overflow:hidden}
@@ -98,12 +100,13 @@
     <img src="assets/icon.png" alt="Respicoon">
     <div class="brand">Respicoon<small>par Bengacoon</small></div>
     <nav>
-      <a href="index.html" class="active">Accueil</a>
-      <a href="index.html#fonctions">Fonctions</a>
-      <a href="guide.html">Guide</a>
-      <a href="index.html#gratuit">Gratuit</a>
-      <a href="privacy.html">Confidentialité</a>
+      <a href="index.html" class="active" data-i18n="nav.home">Accueil</a>
+      <a href="index.html#fonctions" data-i18n="nav.feat">Fonctions</a>
+      <a href="guide.html" data-i18n="nav.guide">Guide</a>
+      <a href="index.html#gratuit" data-i18n="nav.free">Gratuit</a>
+      <a href="privacy.html" data-i18n="nav.privacy">Confidentialité</a>
     </nav>
+    <select id="langSel" class="langsel" aria-label="Language / Langue"></select>
   </div>
 </header>
 
@@ -111,63 +114,63 @@
   <span class="ring r1"></span><span class="ring r2"></span><span class="ring r3"></span><span class="ring r4"></span>
   <div class="wrap">
     <img class="logo" src="assets/icon.png" alt="Respicoon">
-    <div class="par">par Bengacoon</div>
+    <div class="par" data-i18n="brand.by">par Bengacoon</div>
     <h1>Respicoon</h1>
-    <p class="lead">Cohérence cardiaque & respiration guidée. Quelques minutes par jour, souffle après souffle, vers plus de calme, de clarté, d'énergie et un meilleur sommeil.</p>
+    <p class="lead" data-i18n="hero.lead">Cohérence cardiaque & respiration guidée. Quelques minutes par jour, souffle après souffle, vers plus de calme, de clarté, d'énergie et un meilleur sommeil.</p>
     <div class="stores">
       <a class="store soon" href="#" aria-disabled="true">
-        <span class="em">▶</span><span><small>Bientôt sur</small>Google&nbsp;Play</span>
+        <span class="em">▶</span><span><small data-i18n="store.soon">Bientôt sur</small>Google&nbsp;Play</span>
       </a>
       <a class="store" href="https://apps.apple.com/app/id6785929605">
-        <span class="em"></span><span><small>Disponible sur</small>App&nbsp;Store</span>
+        <span class="em"></span><span><small data-i18n="store.avail">Disponible sur</small>App&nbsp;Store</span>
       </a>
       <a class="store" href="https://github.com/jdviallat/respicoon-updates/releases/latest">
-        <span class="em">⬇︎</span><span><small>Télécharger l'</small>APK&nbsp;Android</span>
+        <span class="em">⬇︎</span><span><small data-i18n="store.dl">Télécharger l'</small>APK&nbsp;Android</span>
       </a>
     </div>
-    <p class="ver">Version 2.7.0 · Android 8+ · 9 langues</p>
+    <p class="ver" data-i18n="hero.ver">Version 2.7.0 · Android 8+ · 9 langues</p>
   </div>
 </div>
 
 <div class="shots">
   <div class="inner">
-      <figure><img src="assets/capture-1.png" alt="Accueil" loading="lazy" width="285" height="620"><figcaption>Accueil</figcaption></figure>
-      <figure><img src="assets/capture-2.png" alt="Séance guidée" loading="lazy" width="285" height="620"><figcaption>Séance guidée</figcaption></figure>
-      <figure><img src="assets/capture-3.png" alt="Programmes" loading="lazy" width="285" height="620"><figcaption>Programmes</figcaption></figure>
-      <figure><img src="assets/capture-4.png" alt="Ambiances" loading="lazy" width="285" height="620"><figcaption>Ambiances</figcaption></figure>
-      <figure><img src="assets/capture-5.png" alt="Suivi" loading="lazy" width="285" height="620"><figcaption>Suivi</figcaption></figure>
+      <figure><img src="assets/capture-1.png" alt="Accueil" loading="lazy" width="285" height="620"><figcaption data-i18n="cap.1">Accueil</figcaption></figure>
+      <figure><img src="assets/capture-2.png" alt="Séance guidée" loading="lazy" width="285" height="620"><figcaption data-i18n="cap.2">Séance guidée</figcaption></figure>
+      <figure><img src="assets/capture-3.png" alt="Programmes" loading="lazy" width="285" height="620"><figcaption data-i18n="cap.3">Programmes</figcaption></figure>
+      <figure><img src="assets/capture-4.png" alt="Ambiances" loading="lazy" width="285" height="620"><figcaption data-i18n="cap.4">Ambiances</figcaption></figure>
+      <figure><img src="assets/capture-5.png" alt="Suivi" loading="lazy" width="285" height="620"><figcaption data-i18n="cap.5">Suivi</figcaption></figure>
   </div>
 </div>
 
 <section id="fonctions">
   <div class="wrap">
-    <div class="eyebrow">Ce que fait l'app</div>
-    <h2>Respirer, tout simplement</h2>
-    <p class="sub">Un accompagnement doux et élégant — sans compte, sans jargon, sans connexion.</p>
+    <div class="eyebrow" data-i18n="feat.eyebrow">Ce que fait l'app</div>
+    <h2 data-i18n="feat.h2">Respirer, tout simplement</h2>
+    <p class="sub" data-i18n="feat.sub">Un accompagnement doux et élégant — sans compte, sans jargon, sans connexion.</p>
     <div class="grid">
       <div class="card">
-        <span class="em">🕊️</span><h3>17 séances guidées</h3>
-        <p>De la cohérence cardiaque de référence (Colibri 365) au sommeil, à l'anti-stress, la concentration, l'énergie ou l'ancrage émotionnel — une séance pour chaque moment de la journée.</p>
+        <span class="em">🕊️</span><h3 data-i18n="feat.1.t">17 séances guidées</h3>
+        <p data-i18n="feat.1.p">De la cohérence cardiaque de référence (Colibri 365) au sommeil, à l'anti-stress, la concentration, l'énergie ou l'ancrage émotionnel — une séance pour chaque moment de la journée.</p>
       </div>
       <div class="card">
-        <span class="em">🫧</span><h3>Séance immersive</h3>
-        <p>Un souffle animé vous guide avec deux repères clairs (jusqu'où inspirer, jusqu'où expirer) et un colibri qui bat des ailes. 6 visualisations au choix : cocon de lumière, lotus, lune…</p>
+        <span class="em">🫧</span><h3 data-i18n="feat.2.t">Séance immersive</h3>
+        <p data-i18n="feat.2.p">Un souffle animé vous guide avec deux repères clairs (jusqu'où inspirer, jusqu'où expirer) et un colibri qui bat des ailes. 6 visualisations au choix : cocon de lumière, lotus, lune…</p>
       </div>
       <div class="card">
-        <span class="em">🎧</span><h3>Ambiances & vibrations</h3>
-        <p>11 ambiances sonores réelles (vagues, forêt, pluie, feu, bol tibétain, battements de cœur…) — ou vos propres sons. Vibrations guidées pour respirer les yeux fermés.</p>
+        <span class="em">🎧</span><h3 data-i18n="feat.3.t">Ambiances & vibrations</h3>
+        <p data-i18n="feat.3.p">11 ambiances sonores réelles (vagues, forêt, pluie, feu, bol tibétain, battements de cœur…) — ou vos propres sons. Vibrations guidées pour respirer les yeux fermés.</p>
       </div>
       <div class="card">
-        <span class="em">🗺️</span><h3>Parcours & programmes</h3>
-        <p>Des parcours sur plusieurs jours (mieux dormir, anti-stress, se recentrer) et un créateur de programme personnalisé, à votre rythme.</p>
+        <span class="em">🗺️</span><h3 data-i18n="feat.4.t">Parcours & programmes</h3>
+        <p data-i18n="feat.4.p">Des parcours sur plusieurs jours (mieux dormir, anti-stress, se recentrer) et un créateur de programme personnalisé, à votre rythme.</p>
       </div>
       <div class="card">
-        <span class="em">📊</span><h3>Journal & suivi</h3>
-        <p>Bilans émotionnels avant/après, statistiques de la semaine, badges de régularité et export PDF de votre progression.</p>
+        <span class="em">📊</span><h3 data-i18n="feat.5.t">Journal & suivi</h3>
+        <p data-i18n="feat.5.p">Bilans émotionnels avant/après, statistiques de la semaine, badges de régularité et export PDF de votre progression.</p>
       </div>
       <div class="card">
-        <span class="em">🌙</span><h3>Rappels & confort</h3>
-        <p>Rappels doux (matin, midi, soir), mode thérapeute, thème clair/sombre, 9 langues, et sauvegarde/transfert de vos données entre appareils.</p>
+        <span class="em">🌙</span><h3 data-i18n="feat.6.t">Rappels & confort</h3>
+        <p data-i18n="feat.6.p">Rappels doux (matin, midi, soir), mode thérapeute, thème clair/sombre, 9 langues, et sauvegarde/transfert de vos données entre appareils.</p>
       </div>
     </div>
   </div>
@@ -176,35 +179,37 @@
 <section id="gratuit" class="free">
   <div class="wrap">
     <div class="box">
-      <span class="price">100 % gratuit</span>
-      <h2>Tout est inclus, sans abonnement</h2>
-      <p class="sub" style="margin-bottom:6px">Aucune publicité, aucun achat intégré — vous profitez de toute l'application librement.</p>
+      <span class="price" data-i18n="free.price">100 % gratuit</span>
+      <h2 data-i18n="free.h2">Tout est inclus, sans abonnement</h2>
+      <p class="sub" style="margin-bottom:6px" data-i18n="free.sub">Aucune publicité, aucun achat intégré — vous profitez de toute l'application librement.</p>
       <ul>
-        <li>Les 17 séances guidées et le créateur de programme</li>
-        <li>Toutes les ambiances, visualisations et vibrations</li>
-        <li>Parcours multi-jours, journal, suivi et export PDF</li>
-        <li>Disponible en 9 langues, sur mobile, Mac et PC</li>
+        <li data-i18n="free.li1">Les 17 séances guidées et le créateur de programme</li>
+        <li data-i18n="free.li2">Toutes les ambiances, visualisations et vibrations</li>
+        <li data-i18n="free.li3">Parcours multi-jours, journal, suivi et export PDF</li>
+        <li data-i18n="free.li4">Disponible en 9 langues, sur mobile, Mac et PC</li>
       </ul>
-      <p class="note">Respirez librement : Respicoon fonctionne entièrement hors ligne, sans compte à créer.</p>
+      <p class="note" data-i18n="free.note">Respirez librement : Respicoon fonctionne entièrement hors ligne, sans compte à créer.</p>
     </div>
   </div>
 </section>
 
 <section id="confidentialite" class="privacy">
   <div class="wrap">
-    <div class="eyebrow" style="color:var(--or-clair)">Vos données, chez vous</div>
-    <h2>Rien ne quitte votre appareil</h2>
-    <p class="sub">Aucune donnée envoyée sur Internet, aucun compte à créer. Vos séances et bilans restent chez vous, avec export et import quand vous le souhaitez.</p>
+    <div class="eyebrow" style="color:var(--or-clair)" data-i18n="priv.eyebrow">Vos données, chez vous</div>
+    <h2 data-i18n="priv.h2">Rien ne quitte votre appareil</h2>
+    <p class="sub" data-i18n="priv.sub">Aucune donnée envoyée sur Internet, aucun compte à créer. Vos séances et bilans restent chez vous, avec export et import quand vous le souhaitez.</p>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
     <strong>Respicoon</strong> — par Bengacoon · Disponible en 9 langues<br>
-    <a href="privacy.html">Politique de confidentialité</a> &nbsp;·&nbsp; © 2026 Bengacoon
-    <p class="disc">Respicoon est une application de bien-être. Elle n'établit aucun diagnostic, ne constitue pas un traitement et ne remplace pas l'avis d'un professionnel de santé. En cas de trouble cardiaque ou respiratoire, demandez conseil à votre médecin.</p>
+    <a href="privacy.html" data-i18n="foot.privacy">Politique de confidentialité</a> &nbsp;·&nbsp; © 2026 Bengacoon
+    <p class="disc" data-i18n="foot.disc">Respicoon est une application de bien-être. Elle n'établit aucun diagnostic, ne constitue pas un traitement et ne remplace pas l'avis d'un professionnel de santé. En cas de trouble cardiaque ou respiratoire, demandez conseil à votre médecin.</p>
   </div>
 </footer>
 
+<script src="i18n-data.js"></script>
+<script src="i18n.js"></script>
 </body>
 </html>
