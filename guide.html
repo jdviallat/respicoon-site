@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Respicoon — Guide d'utilisation</title>
+<meta name="description" content="Guide complet de Respicoon : séances, apaisement express, souffle animé, cohérence cardiaque, parcours, programmes planifiés, suivi, rappels, sauvegarde. Tout ce que vous pouvez faire, et comment.">
+<link rel="icon" href="assets/favicon.png">
+<meta property="og:title" content="Respicoon — Guide d'utilisation">
+<meta property="og:description" content="Tout ce que vous pouvez faire avec Respicoon, et comment.">
+<meta property="og:image" content="assets/icon.png">
+<style>
+  :root{
+    --nuit:#213A4E; --nuit-fonce:#16293A; --sauge:#7FB394; --sauge-clair:#A9D0B8;
+    --or:#D6B678; --or-clair:#ECD9A9; --creme:#F5F3EC; --creme-2:#EAE6DA;
+    --texte:#233038; --muted:#6C7680;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--texte);background:var(--creme);line-height:1.65}
+  a{color:inherit}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+
+  header{position:sticky;top:0;z-index:20;background:rgba(245,243,236,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--creme-2)}
+  header .wrap{display:flex;align-items:center;gap:12px;height:64px}
+  header img{width:36px;height:36px;border-radius:9px}
+  header .brand{font-weight:800;font-size:19px;letter-spacing:.2px}
+  header .brand small{display:block;font-weight:600;font-size:11px;color:var(--muted);letter-spacing:.3px}
+  header nav{margin-left:auto;display:flex;gap:22px;font-size:14px;font-weight:600}
+  header nav a{color:var(--muted);text-decoration:none}
+  header nav a:hover{color:var(--nuit)}
+  header nav a.active{color:var(--nuit)}
+  @media(max-width:720px){header nav{display:none}}
+
+  .top{background:linear-gradient(160deg,var(--nuit) 0%,var(--nuit-fonce) 100%);color:#fff;text-align:center;padding:56px 0 62px;position:relative;overflow:hidden}
+  .top .ring{position:absolute;border-radius:50%;border:2px solid var(--sauge);opacity:.10}
+  .top .r1{width:320px;height:320px;top:-90px;left:-70px}
+  .top .r3{width:280px;height:280px;bottom:-110px;right:-60px;border-color:var(--or)}
+  .top .par{color:var(--or-clair);font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;position:relative}
+  .top h1{font-size:40px;line-height:1.1;font-weight:800;letter-spacing:-.5px;position:relative}
+  .top p{max-width:620px;margin:16px auto 0;font-size:17px;color:#DCE7E2;position:relative}
+  @media(max-width:640px){.top h1{font-size:30px}.top p{font-size:15px}}
+
+  .layout{display:grid;grid-template-columns:236px 1fr;gap:40px;padding:44px 0 60px;align-items:start}
+  @media(max-width:820px){.layout{grid-template-columns:1fr;gap:8px}}
+
+  .toc{position:sticky;top:82px}
+  .toc h4{font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:var(--or);margin-bottom:12px}
+  .toc a{display:block;text-decoration:none;color:var(--muted);font-size:14px;font-weight:600;padding:6px 10px;border-radius:8px;border-left:2px solid transparent}
+  .toc a:hover{color:var(--nuit);background:var(--creme-2)}
+  @media(max-width:820px){
+    .toc{position:static;background:#fff;border:1px solid var(--creme-2);border-radius:16px;padding:16px 14px;margin-bottom:14px}
+    .toc .cols{display:grid;grid-template-columns:1fr 1fr;gap:2px 14px}
+  }
+
+  main h2{font-size:24px;font-weight:800;letter-spacing:-.3px;margin:6px 0 4px;scroll-margin-top:80px}
+  main .art{background:#fff;border:1px solid var(--creme-2);border-radius:18px;padding:22px 24px;margin-bottom:20px;box-shadow:0 4px 16px rgba(33,58,78,.04)}
+  main .art .lead{color:var(--muted);margin:2px 0 14px;font-size:15.5px}
+  main h3{font-size:16px;font-weight:800;margin:16px 0 6px;color:var(--nuit)}
+  main p{margin:8px 0;font-size:15.5px}
+  main ol,main ul{margin:8px 0 8px 4px;padding-left:20px}
+  main li{margin:5px 0;font-size:15.5px}
+  main .em{display:inline-flex;width:34px;height:34px;align-items:center;justify-content:center;background:var(--sauge-clair);border-radius:10px;font-size:18px;margin-right:10px;vertical-align:middle}
+  .tip{background:var(--sauge-clair);border-radius:12px;padding:12px 16px;font-size:14.5px;margin:12px 0;border-left:4px solid var(--sauge)}
+  .note{background:var(--or-clair);border-radius:12px;padding:12px 16px;font-size:14.5px;margin:12px 0;border-left:4px solid var(--or)}
+  .pill{display:inline-block;background:var(--creme-2);border-radius:999px;padding:3px 11px;font-size:12.5px;font-weight:700;color:var(--nuit);margin:2px 4px 2px 0}
+
+  footer{background:var(--nuit-fonce);color:#C9D6D0;text-align:center;padding:40px 0;font-size:14px}
+  footer a{color:var(--sauge-clair)}
+  footer .disc{max-width:680px;margin:16px auto 0;font-size:12px;color:#8CA0A8;line-height:1.5}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <img src="assets/icon.png" alt="Respicoon">
+    <div class="brand">Respicoon<small>PAR BENGACOON</small></div>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="guide.html" class="active">Guide</a>
+      <a href="index.html#gratuit">Gratuit</a>
+      <a href="privacy.html">Confidentialité</a>
+    </nav>
+  </div>
+</header>
+
+<div class="top">
+  <span class="ring r1"></span><span class="ring r3"></span>
+  <div class="wrap">
+    <div class="par">Guide d'utilisation</div>
+    <h1>Tout ce que vous pouvez faire</h1>
+    <p>Respicoon vous accompagne, respiration après respiration. Voici, simplement, chaque fonctionnalité et comment l'utiliser. Prenez ce qui vous parle — rien n'est obligatoire.</p>
+  </div>
+</div>
+
+<div class="wrap">
+<div class="layout">
+
+  <aside class="toc">
+    <h4>Sommaire</h4>
+    <div class="cols">
+      <a href="#demarrer">Premiers pas</a>
+      <a href="#seance">Faire une séance</a>
+      <a href="#express">Apaisement express</a>
+      <a href="#souffle">Le souffle animé</a>
+      <a href="#voix">Voix, sons & vibrations</a>
+      <a href="#coherence">Cohérence cardiaque</a>
+      <a href="#parcours">Parcours guidés</a>
+      <a href="#programmes">Programmes planifiés</a>
+      <a href="#creer">Créer une séance</a>
+      <a href="#suivi">Suivi & objectifs</a>
+      <a href="#journal">Journal</a>
+      <a href="#rappels">Rappels</a>
+      <a href="#raccourcis">Widget & raccourci</a>
+      <a href="#reglages">Réglages</a>
+      <a href="#sauvegarde">Sauvegarde & transfert</a>
+      <a href="#therapeute">Mode thérapeute</a>
+      <a href="#donnees">Vos données</a>
+      <a href="#faq">Questions fréquentes</a>
+    </div>
+  </aside>
+
+  <main>
+
+    <section id="demarrer" class="art">
+      <h2><span class="em">🌱</span>Premiers pas</h2>
+      <p class="lead">À la première ouverture, un court accueil vous présente l'application et vous pose une question : « Qu'est-ce qui vous amène ? ».</p>
+      <p>Votre réponse (mieux dormir, moins de stress, plus de concentration, se recentrer) sert à vous proposer une première séance adaptée. Vous pourrez tout explorer ensuite, et refaire ce questionnaire à tout moment depuis <strong>Réglages → Découverte</strong>.</p>
+      <div class="tip">Respicoon fonctionne <strong>100 % hors ligne</strong> et <strong>gratuitement</strong>. Aucune inscription, aucune publicité.</div>
+    </section>
+
+    <section id="seance" class="art">
+      <h2><span class="em">🫧</span>Faire une séance</h2>
+      <p class="lead">Une « séance » est une respiration guidée : le cercle grandit, vous inspirez ; il rétrécit, vous expirez.</p>
+      <h3>Choisir sa séance</h3>
+      <p>Sur l'accueil, touchez <strong>Conseillé maintenant</strong> (la séance adaptée à l'heure), ou allez dans l'onglet <strong>Séances</strong> pour parcourir les 17 séances : cohérence 365, anti-stress, sommeil 4-7-8, concentration, ancrage, avant de prendre la parole, sieste express, récupération après l'effort, et plus.</p>
+      <h3>Avant, pendant, après</h3>
+      <ol>
+        <li><strong>Avant</strong> — un petit bilan facultatif : votre niveau de stress, votre énergie, votre intention. Vous pouvez le passer.</li>
+        <li><strong>Pendant</strong> — suivez le souffle animé. La phase (inspirez / retenez / expirez) et le minuteur s'affichent. Les boutons permettent de mettre en pause ou d'arrêter.</li>
+        <li><strong>Après</strong> — notez comment vous vous sentez (niveau de calme, un mot, une note libre). Cela nourrit votre suivi.</li>
+      </ol>
+      <div class="tip">Pendant la séance, l'écran reste allumé, la luminosité peut baisser doucement, et l'affichage passe en fond sombre apaisant.</div>
+    </section>
+
+    <section id="express" class="art">
+      <h2><span class="em">💨</span>Apaisement express</h2>
+      <p class="lead">Un bouton sur l'accueil lance en un seul geste une séance courte d'une minute (respiration apaisante), pour retrouver le calme immédiatement.</p>
+      <p>Idéal avant un moment stressant, ou quand vous n'avez qu'une minute. Aucun réglage : touchez, respirez.</p>
+    </section>
+
+    <section id="souffle" class="art">
+      <h2><span class="em">🎨</span>Le souffle animé</h2>
+      <p class="lead">Choisissez la visualisation qui vous apaise le plus, dans <strong>Réglages → Visualisation de séance</strong>.</p>
+      <p><span class="pill">Cercle</span><span class="pill">Cocon de lumière</span><span class="pill">Fleur de lotus</span><span class="pill">Lune</span><span class="pill">Lucioles</span><span class="pill">Ondes sur l'eau</span><span class="pill">Colibri</span></p>
+      <p>Chaque style montre jusqu'où inspirer (le grand repère) et jusqu'où expirer (le petit). Le style <strong>Colibri</strong> : l'oiseau monte en battant des ailes quand vous inspirez, puis se pose sur sa branche quand vous expirez, tandis qu'une jauge se remplit au rythme du souffle.</p>
+    </section>
+
+    <section id="voix" class="art">
+      <h2><span class="em">🔊</span>Voix, sons & vibrations</h2>
+      <h3>Voix guidée</h3>
+      <p>Une voix douce annonce les phases (« inspirez », « retenez », « expirez ») pour respirer les yeux fermés. À activer dans <strong>Réglages</strong>.</p>
+      <h3>Ambiances sonores</h3>
+      <p>Dix ambiances réelles (vagues, forêt, pluie, bol tibétain, feu de cheminée…), avec volume réglable. Vous pouvez aussi importer vos propres sons.</p>
+      <h3>Sons binauraux</h3>
+      <p>Des fréquences discrètes de détente, sommeil ou concentration, à écouter au casque, en complément de la respiration.</p>
+      <h3>Vibrations & écran verrouillé</h3>
+      <p>De légères vibrations marquent chaque changement de phase — parfait pour respirer sans regarder l'écran. La séance peut aussi se contrôler <strong>depuis l'écran verrouillé</strong>.</p>
+    </section>
+
+    <section id="coherence" class="art">
+      <h2><span class="em">🫀</span>Cohérence cardiaque au doigt</h2>
+      <p class="lead">Posez le doigt sur l'appareil photo arrière : Respicoon mesure votre pouls et affiche un indicateur de cohérence de 0 à 100.</p>
+      <h3>Mesure libre</h3>
+      <p>Depuis l'accueil, « Cohérence — mesure au doigt » : votre pouls et votre cohérence, en direct.</p>
+      <h3>Avant / après une séance</h3>
+      <p>Activez <strong>Réglages → Cohérence cardiaque → Mesurer avant/après</strong>. Une courte mesure vous est proposée avant puis après la séance, et l'application vous montre votre <strong>progression</strong>.</p>
+      <div class="note">Indicateur de bien-être — ce n'est pas une mesure médicale. Aucune image n'est enregistrée ni envoyée : seule la variation de couleur sous le doigt est lue.</div>
+    </section>
+
+    <section id="parcours" class="art">
+      <h2><span class="em">🗺️</span>Parcours guidés</h2>
+      <p class="lead">Des programmes tout prêts sur plusieurs jours, un souffle à la fois.</p>
+      <p>Trois parcours : <strong>7 jours pour mieux dormir</strong>, <strong>5 jours anti-stress</strong>, <strong>3 jours pour se recentrer</strong>. Chaque jour propose une intention et une séance. Depuis l'accueil → <strong>Parcours guidés</strong>.</p>
+    </section>
+
+    <section id="programmes" class="art">
+      <h2><span class="em">📅</span>Programmes planifiés</h2>
+      <p class="lead">Créez votre propre plan sur plusieurs semaines : une séance le matin, le midi, le soir — les jours de votre choix.</p>
+      <h3>Créer un programme</h3>
+      <ol>
+        <li>Accueil → <strong>Mes programmes</strong> → <strong>Créer un programme</strong>.</li>
+        <li>Donnez-lui un nom (ex. « Mon mois de calme »).</li>
+        <li>Choisissez la <strong>durée</strong> (en semaines, ou 1 / 2 / 3 mois).</li>
+        <li>Sélectionnez les <strong>jours</strong> de la semaine actifs.</li>
+        <li>Pour chaque créneau — <strong>matin, midi, soir</strong> — choisissez une séance et une heure (ex. matin Colibri 365, midi Cohérence, soir Endormissement).</li>
+        <li>Activez les <strong>rappels</strong> si vous voulez une notification à chaque créneau.</li>
+      </ol>
+      <div class="tip">Quand un programme est actif, l'accueil affiche automatiquement <strong>la séance du créneau en cours</strong> dans « Conseillé maintenant » — vous n'avez qu'à respirer.</div>
+      <p><strong>Différence séance / programme :</strong> une <em>séance</em> est une respiration unique ; un <em>programme</em> est un plan qui enchaîne des séances dans le temps.</p>
+    </section>
+
+    <section id="creer" class="art">
+      <h2><span class="em">✏️</span>Créer une séance</h2>
+      <p class="lead">Composez votre propre respiration sur mesure.</p>
+      <p>Onglet <strong>Séances</strong> → <strong>Créer</strong> (ou accueil → Créer une séance). Réglez la durée d'inspiration, de rétention, d'expiration, la durée totale, l'ambiance et le style visuel. Votre séance rejoint « Mes séances » et peut être utilisée dans un programme.</p>
+    </section>
+
+    <section id="suivi" class="art">
+      <h2><span class="em">📊</span>Suivi & objectifs</h2>
+      <p class="lead">Onglet <strong>Suivi</strong> : votre pratique, sans pression.</p>
+      <ul>
+        <li><strong>Objectif de la semaine</strong> — fixez un nombre de séances (Réglages) et suivez votre progression avec une jauge.</li>
+        <li><strong>Cette semaine</strong> — minutes pratiquées par jour, série de jours d'affilée.</li>
+        <li><strong>Bilan de la semaine</strong> — votre gain de calme moyen et le programme qui vous apaise le plus.</li>
+        <li><strong>Vos repères</strong> — des badges doux qui se débloquent au fil de votre pratique.</li>
+        <li><strong>Export PDF</strong> — un récapitulatif de votre suivi.</li>
+      </ul>
+    </section>
+
+    <section id="journal" class="art">
+      <h2><span class="em">📔</span>Journal</h2>
+      <p class="lead">Onglet <strong>Journal</strong> : l'historique de vos bilans avant/après.</p>
+      <p>Chaque séance avec bilan garde votre niveau de stress avant, votre calme après, et vos notes. De quoi voir, avec le temps, ce qui vous fait du bien.</p>
+    </section>
+
+    <section id="rappels" class="art">
+      <h2><span class="em">⏰</span>Rappels</h2>
+      <p class="lead">Des invitations douces, jamais insistantes — dans <strong>Réglages → Rappels doux</strong>.</p>
+      <ul>
+        <li><strong>Matin / midi / soir</strong> — jusqu'à trois rappels quotidiens, aux heures de votre choix.</li>
+        <li><strong>Rappel malin</strong> — une relance seulement si vous n'avez pas respiré depuis 2 jours.</li>
+        <li><strong>Rappels de programme</strong> — une notification à l'heure de chaque créneau de vos programmes planifiés.</li>
+      </ul>
+    </section>
+
+    <section id="raccourcis" class="art">
+      <h2><span class="em">⚡</span>Widget & raccourci</h2>
+      <p class="lead">Respirer sans même ouvrir l'application.</p>
+      <ul>
+        <li><strong>Widget d'accueil</strong> — un rappel doux à poser sur votre écran d'accueil ; un tap lance l'app.</li>
+        <li><strong>Tuile Réglages rapides (Android)</strong> — ajoutez la tuile « Respirer » dans le volet du haut pour démarrer d'un geste.</li>
+      </ul>
+    </section>
+
+    <section id="reglages" class="art">
+      <h2><span class="em">⚙️</span>Réglages</h2>
+      <p class="lead">La roue en haut de l'accueil ouvre tous les réglages.</p>
+      <ul>
+        <li><strong>Langue</strong> — disponible en 9 langues (français, anglais, allemand, italien, espagnol, portugais, suédois, norvégien, finnois).</li>
+        <li><strong>Thème</strong> — clair, sombre ou automatique.</li>
+        <li><strong>Taille du texte</strong>, <strong>mode discret</strong> (vibrations seules), décompte de départ, luminosité en séance.</li>
+      </ul>
+    </section>
+
+    <section id="sauvegarde" class="art">
+      <h2><span class="em">💾</span>Sauvegarde & transfert</h2>
+      <p class="lead">Changez de téléphone sans rien perdre — <strong>Réglages → Sauvegarde &amp; transfert</strong>.</p>
+      <ol>
+        <li>Sur l'ancien appareil : <strong>Sauvegarder mes données</strong> → un fichier est créé et partageable.</li>
+        <li>Sur le nouveau : <strong>Restaurer</strong> → sélectionnez ce fichier.</li>
+      </ol>
+      <p>Le format est identique sur Android, iPhone, PC et Mac. Tout reste hors ligne : rien n'est envoyé sur Internet.</p>
+      <div class="tip">Vos séances, bilans, parcours et programmes personnels sont <strong>conservés lors des mises à jour</strong> de l'application.</div>
+    </section>
+
+    <section id="therapeute" class="art">
+      <h2><span class="em">🌿</span>Mode thérapeute</h2>
+      <p class="lead">Pour les praticiens qui accompagnent des clients en séance.</p>
+      <p>Activez-le dans <strong>Réglages → Mode thérapeute</strong>. Évaluez l'état du moment d'un client et laissez l'application proposer la séance la plus adaptée. Un discret repère indique quand le mode est actif.</p>
+    </section>
+
+    <section id="donnees" class="art">
+      <h2><span class="em">🔒</span>Vos données</h2>
+      <p class="lead">Tout reste sur votre appareil.</p>
+      <p>Respicoon ne collecte aucune donnée personnelle et fonctionne sans compte. La seule connexion possible est la vérification manuelle des mises à jour (un simple fichier lu, aucune donnée envoyée). Détails sur la <a href="privacy.html">page Confidentialité</a>.</p>
+    </section>
+
+    <section id="faq" class="art">
+      <h2><span class="em">❓</span>Questions fréquentes</h2>
+      <h3>Est-ce vraiment gratuit ?</h3>
+      <p>Oui, entièrement, sans abonnement ni publicité.</p>
+      <h3>Vais-je perdre mes données en mettant à jour ?</h3>
+      <p>Non. Vos séances, bilans et programmes sont conservés d'une version à l'autre. Pour changer d'appareil, utilisez la sauvegarde par fichier.</p>
+      <h3>Faut-il Internet ?</h3>
+      <p>Non, l'application fonctionne entièrement hors ligne.</p>
+      <h3>Est-ce un dispositif médical ?</h3>
+      <p>Non. Respicoon est une application de bien-être. Elle n'établit aucun diagnostic et ne remplace pas l'avis d'un professionnel de santé.</p>
+    </section>
+
+  </main>
+</div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <strong>Respicoon</strong> — par Bengacoon · Disponible en 9 langues<br>
+    <a href="index.html">Accueil</a> &nbsp;·&nbsp; <a href="privacy.html">Politique de confidentialité</a> &nbsp;·&nbsp; © 2026 Bengacoon
+    <p class="disc">Respicoon est une application de bien-être. Elle n'établit aucun diagnostic, ne constitue pas un traitement et ne remplace pas l'avis d'un professionnel de santé. En cas de trouble cardiaque ou respiratoire, demandez conseil à votre médecin.</p>
+  </div>
+</footer>
+
+</body>
+</html>
