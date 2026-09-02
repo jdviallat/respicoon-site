@@ -213,18 +213,39 @@
 </section>
 
 
-<section class="bgc-contact" id="contact">
+
+<section class="bgc-contact" id="bgc-contact">
   <div class="wrap">
     <div class="bgc-box">
-      <h2>Contact &amp; assistance</h2>
-      <p>Merci de <span class="k">préciser de quelle application</span> vous parlez — ici <span class="k">Respicoon</span>, déjà indiqué dans le message.</p>
-      <p>Et de préciser s'il s'agit d'un <span class="k">renseignement</span>, d'un <span class="k">bug</span> ou d'une <span class="k">proposition de nouvelle fonctionnalité</span>.</p>
-      <a class="bgc-mail" href="mailto:info@bengacoon.com?subject=Respicoon%20%E2%80%94%20&body=Application%20%3A%20Respicoon%0D%0AType%20de%20demande%20%3A%20renseignement%20%2F%20bug%20%2F%20proposition%20de%20fonctionnalit%C3%A9%0D%0A%0D%0AVotre%20message%20%3A%0D%0A">✉️ Écrire à l'assistance</a>
+      <h2 data-bgc="h"></h2>
+      <p data-bgc="p1"></p>
+      <p data-bgc="p2"></p>
+      <a class="bgc-mail" data-bgc="btn" href="mailto:info@bengacoon.com"></a>
       <span class="bgc-addr">info@bengacoon.com</span>
     </div>
   </div>
 </section>
-
+<script>(function(){
+var T={"fr":{"h":"Une question ? Un souci ? Une idée ?","p1":"Écrivez-nous : chaque message est lu. Dites-nous simplement de quelle application vous parlez — ici {app}, c'est déjà noté pour vous.","p1h":"Écrivez-nous : chaque message est lu. Dites-nous simplement de quelle application vous parlez — la première ligne du message est prévue pour ça.","p2":"Et précisez si c'est un renseignement, un bug qui vous embête, ou une idée de fonctionnalité — les meilleures viennent souvent de vous.","btn":"✉️ Nous écrire","body":"Application : {app}\nType de demande : renseignement / bug / idée de fonctionnalité\n\nVotre message :\n"},"en":{"h":"A question? A problem? An idea?","p1":"Write to us — every message is read. Just tell us which app you mean; here it's {app}, already filled in for you.","p1h":"Write to us — every message is read. Just tell us which app you mean; the first line of the message is there for that.","p2":"And let us know whether it's a question, a bug that's bothering you, or an idea for a new feature — the best ones often come from you.","btn":"✉️ Write to us","body":"App: {app}\nType of request: question / bug / feature idea\n\nYour message:\n"},"de":{"h":"Eine Frage? Ein Problem? Eine Idee?","p1":"Schreiben Sie uns — jede Nachricht wird gelesen. Sagen Sie uns einfach, um welche App es geht; hier {app}, schon für Sie eingetragen.","p1h":"Schreiben Sie uns — jede Nachricht wird gelesen. Sagen Sie uns einfach, um welche App es geht; die erste Zeile ist dafür vorgesehen.","p2":"Und sagen Sie uns, ob es eine Frage, ein störender Fehler oder eine Idee für eine neue Funktion ist — die besten kommen oft von Ihnen.","btn":"✉️ Schreiben Sie uns","body":"App: {app}\nArt der Anfrage: Frage / Fehler / Funktionsidee\n\nIhre Nachricht:\n"},"it":{"h":"Una domanda? Un problema? Un'idea?","p1":"Scriveteci: leggiamo ogni messaggio. Indicateci solo di quale app si tratta; qui {app}, già inserita per voi.","p1h":"Scriveteci: leggiamo ogni messaggio. Indicateci solo di quale app si tratta: la prima riga del messaggio serve a questo.","p2":"E precisate se è un'informazione, un bug che vi dà fastidio o un'idea per una nuova funzione — le migliori vengono spesso da voi.","btn":"✉️ Scriveteci","body":"App: {app}\nTipo di richiesta: informazione / bug / idea di funzione\n\nIl vostro messaggio:\n"},"pt":{"h":"Uma dúvida? Um problema? Uma ideia?","p1":"Escreva-nos: lemos todas as mensagens. Basta dizer de que aplicação se trata; aqui {app}, já preenchido para si.","p1h":"Escreva-nos: lemos todas as mensagens. Basta dizer de que aplicação se trata — a primeira linha da mensagem serve para isso.","p2":"E diga-nos se é uma dúvida, um erro que o incomoda ou uma ideia de funcionalidade — as melhores vêm muitas vezes de si.","btn":"✉️ Escreva-nos","body":"Aplicação: {app}\nTipo de pedido: dúvida / erro / ideia de funcionalidade\n\nA sua mensagem:\n"},"es":{"h":"¿Una duda? ¿Un problema? ¿Una idea?","p1":"Escríbanos: leemos todos los mensajes. Solo díganos de qué aplicación se trata; aquí {app}, ya rellenado por usted.","p1h":"Escríbanos: leemos todos los mensajes. Solo díganos de qué aplicación se trata — la primera línea del mensaje es para eso.","p2":"Y precise si es una consulta, un error que le molesta o una idea de función — las mejores suelen venir de ustedes.","btn":"✉️ Escríbanos","body":"Aplicación: {app}\nTipo de solicitud: consulta / error / idea de función\n\nSu mensaje:\n"},"sv":{"h":"En fråga? Ett problem? En idé?","p1":"Skriv till oss — vi läser varje meddelande. Berätta bara vilken app det gäller; här {app}, redan ifyllt åt dig.","p1h":"Skriv till oss — vi läser varje meddelande. Berätta bara vilken app det gäller: första raden är till för det.","p2":"Och berätta om det är en fråga, ett fel som stör dig eller en idé till en ny funktion — de bästa kommer ofta från dig.","btn":"✉️ Skriv till oss","body":"App: {app}\nTyp av ärende: fråga / fel / funktionsidé\n\nDitt meddelande:\n"},"no":{"h":"Et spørsmål? Et problem? En idé?","p1":"Skriv til oss — vi leser hver melding. Fortell oss bare hvilken app det gjelder; her {app}, allerede fylt ut for deg.","p1h":"Skriv til oss — vi leser hver melding. Fortell oss bare hvilken app det gjelder: den første linjen er til det.","p2":"Og si om det er et spørsmål, en feil som plager deg, eller en idé til en ny funksjon — de beste kommer ofte fra deg.","btn":"✉️ Skriv til oss","body":"App: {app}\nType henvendelse: spørsmål / feil / funksjonsidé\n\nDin melding:\n"},"fi":{"h":"Kysymys? Ongelma? Idea?","p1":"Kirjoita meille — luemme jokaisen viestin. Kerro vain, mistä sovelluksesta on kyse; tässä {app}, valmiiksi täytettynä.","p1h":"Kirjoita meille — luemme jokaisen viestin. Kerro vain, mistä sovelluksesta on kyse: viestin ensimmäinen rivi on sitä varten.","p2":"Ja kerro, onko kyseessä kysymys, häiritsevä virhe vai idea uudesta ominaisuudesta — parhaat tulevat usein teiltä.","btn":"✉️ Kirjoita meille","body":"Sovellus: {app}\nPyynnön tyyppi: kysymys / virhe / ominaisuusidea\n\nViestisi:\n"}};
+var APP="Respicoon";
+var KEYS=["litho_lang", "oc_lang", "rc_lang", "fc_lang", "numerocoon:lang", "respicoon_lang", "lifecoon_lang", "lang"];
+var MAIL="info@bengacoon.com";
+function lang(){var v=null;try{for(var i=0;i<KEYS.length;i++){var x=localStorage.getItem(KEYS[i]);if(x){v=x;break}}}catch(e){}
+ v=v||document.documentElement.lang||(navigator.language||"fr");v=String(v).slice(0,2).toLowerCase();
+ if(v==="nb"||v==="nn")v="no"; return T[v]?v:"fr";}
+function draw(){var t=T[lang()],b=document.getElementById("bgc-contact");if(!b)return;
+ var p1=APP?t.p1.replace("{app}",APP):t.p1h;
+ b.querySelector("[data-bgc=h]").textContent=t.h;
+ b.querySelector("[data-bgc=p1]").textContent=p1;
+ b.querySelector("[data-bgc=p2]").textContent=t.p2;
+ var a=b.querySelector("[data-bgc=btn]");a.textContent=t.btn;
+ a.href="mailto:"+MAIL+"?subject="+encodeURIComponent((APP||"Bengacoon")+" \u2014 ")
+   +"&body="+encodeURIComponent(t.body.replace("{app}",APP).replace(/\n/g,"\r\n"));}
+draw();
+document.addEventListener("change",function(e){if(e.target&&e.target.tagName==="SELECT")setTimeout(draw,60)},true);
+document.addEventListener("click",function(){setTimeout(draw,120)},true);
+new MutationObserver(draw).observe(document.documentElement,{attributes:true,attributeFilter:["lang"]});
+})();</script>
 <footer>
   <div class="wrap">
     <strong>Respicoon</strong> — par Bengacoon · Disponible en 9 langues<br>
