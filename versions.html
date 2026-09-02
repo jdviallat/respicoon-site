@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Respicoon — Versions & nouveautés</title>
+<meta name="description" content="Le journal des versions de Respicoon : chaque mise à jour et son détail.">
+<link rel="icon" href="assets/favicon.png">
+<style>
+  :root{--nuit:#213A4E;--nuit-fonce:#16293A;--sauge:#7FB394;--sauge-clair:#A9D0B8;--or:#D6B678;--or-clair:#ECD9A9;--creme:#F5F3EC;--creme-2:#EAE6DA;--texte:#233038;--muted:#6C7680}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--texte);background:var(--creme);line-height:1.6}
+  a{color:inherit}
+  .wrap{max-width:900px;margin:0 auto;padding:0 22px}
+  header{position:sticky;top:0;z-index:20;background:rgba(245,243,236,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--creme-2)}
+  header .wrap{max-width:1040px;display:flex;align-items:center;gap:10px;min-height:60px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
+  header img{width:34px;height:34px;border-radius:9px}
+  header .brand{font-weight:800;font-size:18px;line-height:1.1;letter-spacing:.2px}
+  header .brand small{display:block;font-weight:600;font-size:10px;color:var(--muted);letter-spacing:.3px}
+  header nav{margin-left:auto;display:flex;gap:8px 16px;font-size:14px;font-weight:600;flex-wrap:wrap}
+  header nav a{color:var(--muted);text-decoration:none;white-space:nowrap}
+  header nav a:hover,header nav a.active{color:var(--nuit)}
+  .langsel{margin-left:12px;border:1px solid var(--creme-2);background:#fff;color:var(--nuit);border-radius:9px;padding:5px 8px;font-size:13px;font-weight:600}
+  @media(max-width:560px){header nav{margin-left:0;width:100%;gap:6px 14px;font-size:13px}.langsel{margin-left:0}}
+  .top{background:linear-gradient(160deg,var(--nuit),var(--nuit-fonce));color:#fff;text-align:center;padding:52px 0 58px;position:relative;overflow:hidden}
+  .top .ring{position:absolute;border-radius:50%;border:2px solid var(--sauge);opacity:.10}
+  .top .r1{width:320px;height:320px;top:-90px;left:-70px}.top .r3{width:280px;height:280px;bottom:-110px;right:-60px;border-color:var(--or)}
+  .top .par{color:var(--or-clair);font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;position:relative}
+  .top h1{font-size:38px;font-weight:800;letter-spacing:-.5px;position:relative}
+  .top p{max-width:600px;margin:14px auto 0;font-size:16px;color:#DCE7E2;position:relative}
+  @media(max-width:640px){.top h1{font-size:29px}}
+  main{padding:40px 0 60px}
+  .verz{background:#fff;border:1px solid var(--creme-2);border-radius:18px;padding:20px 22px;margin-bottom:18px;box-shadow:0 4px 16px rgba(33,58,78,.04)}
+  .vh{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--creme-2);padding-bottom:12px;margin-bottom:12px}
+  .vn{font-weight:800;font-size:22px;color:var(--nuit);letter-spacing:-.3px}
+  .cur{background:var(--sauge);color:var(--nuit);font-size:11px;font-weight:800;padding:3px 9px;border-radius:999px;text-transform:uppercase;letter-spacing:.5px}
+  .vmeta{margin-left:auto;text-align:right}
+  .vmeta h2{font-size:16px;font-weight:700;color:var(--texte)}
+  .vdate{font-size:12.5px;color:var(--muted);font-weight:600}
+  @media(max-width:560px){.vmeta{margin-left:0;text-align:left;width:100%}}
+  .verz ul{list-style:none}
+  .verz li{display:flex;gap:10px;align-items:flex-start;padding:6px 0;font-size:15px}
+  .tag{flex:none;display:inline-flex;align-items:center;gap:5px;background:var(--creme-2);color:var(--nuit);font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:999px;min-width:104px}
+  .tag .te{font-size:12px}
+  footer{background:var(--nuit-fonce);color:#C9D6D0;text-align:center;padding:36px 0;font-size:14px}
+  footer a{color:var(--sauge-clair)}
+  footer .disc{max-width:680px;margin:14px auto 0;font-size:12px;color:#8CA0A8;line-height:1.5}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <img src="assets/icon.png" alt="Respicoon">
+    <div class="brand">Respicoon<small>par Bengacoon</small></div>
+    <nav>
+      <a href="index.html" data-i18n="nav.home">Accueil</a>
+      <a href="index.html#fonctions" data-i18n="nav.feat">Fonctions</a>
+      <a href="guide.html" data-i18n="nav.guide">Guide</a>
+      <a href="versions.html" class="active" data-i18n="nav.versions">Versions</a>
+      <a href="index.html#gratuit" data-i18n="nav.free">Gratuit</a>
+      <a href="privacy.html" data-i18n="nav.privacy">Confidentialité</a>
+    </nav>
+    <select id="langSel" class="langsel" aria-label="Language / Langue"></select>
+  </div>
+</header>
+<div class="top">
+  <span class="ring r1"></span><span class="ring r3"></span>
+  <div class="wrap">
+    <div class="par" data-i18n="ver.eyebrow">Journal des versions</div>
+    <h1 data-i18n="ver.h1">Nouveautés</h1>
+    <p data-i18n="ver.sub">L'évolution de Respicoon, version après version. La dernière mise à jour arrive automatiquement dans l'app.</p>
+  </div>
+</div>
+<main>
+  <div class="wrap">
+  <article class="verz">
+    <div class="vh">
+      <span class="vn">2.9.0</span> <span class="cur" data-i18n="ver.current">Version actuelle</span>
+      <div class="vmeta"><h2 data-i18n="v.0.title">Programmes planifiés &amp; accueil épuré</h2>
+      <span class="vdate" data-i18n="v.0.date">Août 2026</span></div>
+    </div>
+    <ul>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.0.c.0">Programmes : créez un plan sur plusieurs semaines avec une séance le matin, le midi et le soir, les jours de votre choix, et des rappels à chaque créneau (accueil → Mes programmes).</span></li>
+      <li><span class="tag"><span class="te">🌿</span><span data-i18n="ct.amelioration">Amélioration</span></span><span data-i18n="v.0.c.1">Accueil : « Conseillé maintenant » suit désormais votre programme du moment (la séance du créneau en cours) ; sinon la séance adaptée à l&#x27;heure.</span></li>
+      <li><span class="tag"><span class="te">🌿</span><span data-i18n="ct.amelioration">Amélioration</span></span><span data-i18n="v.0.c.2">Accueil réorganisé : « Apaisement express » et « Conseillé maintenant » côte à côte, badge thérapeute discret.</span></li>
+      <li><span class="tag"><span class="te">🌿</span><span data-i18n="ct.amelioration">Amélioration</span></span><span data-i18n="v.0.c.3">Vocabulaire clarifié : les respirations guidées s&#x27;appellent désormais des « séances », et un « programme » est un plan qui les enchaîne.</span></li>
+    </ul>
+  </article>
+  <article class="verz">
+    <div class="vh">
+      <span class="vn">2.8.0</span>
+      <div class="vmeta"><h2 data-i18n="v.1.title">Colibri, objectifs &amp; rappels malins</h2>
+      <span class="vdate" data-i18n="v.1.date">Août 2026</span></div>
+    </div>
+    <ul>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.1.c.0">Nouveau souffle « Colibri » : l&#x27;oiseau monte en battant des ailes quand vous inspirez, puis se pose sur sa branche quand vous expirez — une jauge se remplit au rythme du souffle (Réglages → Visualisation).</span></li>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.1.c.1">Objectif de la semaine : fixez un nombre de séances et suivez votre progression avec une jauge dans le suivi.</span></li>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.1.c.2">Rappel malin : une invitation douce si vous n&#x27;avez pas respiré depuis 2 jours (activable dans les Réglages).</span></li>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.1.c.3">Tuile « Respirer » dans les Réglages rapides Android : lancez une séance d&#x27;un geste depuis le volet du haut.</span></li>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.1.c.4">Cohérence avant/après : mesurez votre cohérence au doigt avant et après la séance et voyez votre progression (à activer dans les Réglages).</span></li>
+    </ul>
+  </article>
+  <article class="verz">
+    <div class="vh">
+      <span class="vn">2.7.0</span>
+      <div class="vmeta"><h2 data-i18n="v.2.title">Voix, cohérence &amp; plus encore</h2>
+      <span class="vdate" data-i18n="v.2.date">Août 2026</span></div>
+    </div>
+    <ul>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.2.c.0">Voix guidée : une voix douce annonce « inspirez / retenez / expirez » pendant la séance.</span></li>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.2.c.1">Apaisement express : un bouton d&#x27;accueil lance une séance apaisante d&#x27;une minute en un tap.</span></li>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.2.c.2">Bilan de la semaine : votre récap et le programme qui vous apaise le plus.</span></li>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.2.c.3">Sons binauraux : fréquences de détente, sommeil ou concentration, au casque.</span></li>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.2.c.4">Séance sur écran verrouillé : respirez les yeux fermés, guidé par le son et les vibrations.</span></li>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.2.c.5">Biofeedback de cohérence : mesurez votre pouls au doigt sur l&#x27;appareil photo et suivez votre cohérence.</span></li>
+    </ul>
+  </article>
+  <article class="verz">
+    <div class="vh">
+      <span class="vn">2.6.1</span>
+      <div class="vmeta"><h2 data-i18n="v.3.title">6 nouvelles séances</h2>
+      <span class="vdate" data-i18n="v.3.date">Juillet 2026</span></div>
+    </div>
+    <ul>
+      <li><span class="tag"><span class="te">🌿</span><span data-i18n="ct.amelioration">Amélioration</span></span><span data-i18n="v.3.c.0">Les 6 nouvelles séances sont désormais traduites dans les 9 langues.</span></li>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.3.c.1">Respiration carrée : équilibre et maîtrise sous pression.</span></li>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.3.c.2">Cohérence approfondie : le 365 en version longue de 10 minutes.</span></li>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.3.c.3">Avant de prendre la parole : apaiser le trac avant un examen ou une réunion.</span></li>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.3.c.4">Sieste express : récupérer en journée sans vraiment dormir.</span></li>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.3.c.5">Récupération après l&#x27;effort : faire redescendre le cœur après le sport.</span></li>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.3.c.6">Apaiser une envie : laisser passer une pulsion grâce à une expiration très longue.</span></li>
+      <li><span class="tag"><span class="te">🌿</span><span data-i18n="ct.amelioration">Amélioration</span></span><span data-i18n="v.3.c.7">Nouvelle section « Mise à jour » dans les Réglages pour vérifier si une version plus récente est disponible.</span></li>
+    </ul>
+  </article>
+  <article class="verz">
+    <div class="vh">
+      <span class="vn">2.3.0</span>
+      <div class="vmeta"><h2 data-i18n="v.4.title">Présentation &amp; signature Bengacoon</h2>
+      <span class="vdate" data-i18n="v.4.date">Juillet 2026</span></div>
+    </div>
+    <ul>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.4.c.0">Nouvel écran « Présentation de l&#x27;application » : la cohérence cardiaque, les programmes, le suivi et le mode thérapeute expliqués en un coup d&#x27;œil (Réglages → Découverte).</span></li>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.4.c.1">Logo de marque Respicoon en bas de l&#x27;accueil et des réglages, avec la version de l&#x27;application.</span></li>
+      <li><span class="tag"><span class="te">🌿</span><span data-i18n="ct.amelioration">Amélioration</span></span><span data-i18n="v.4.c.2">Réglages réorganisés : nouvelle section « Audio &amp; voix » qui regroupe ambiances sonores et mode discret.</span></li>
+      <li><span class="tag"><span class="te">🌿</span><span data-i18n="ct.amelioration">Amélioration</span></span><span data-i18n="v.4.c.3">Un badge sur l&#x27;accueil indique quand le mode thérapeute est actif.</span></li>
+    </ul>
+  </article>
+  <article class="verz">
+    <div class="vh">
+      <span class="vn">2.2.0</span>
+      <div class="vmeta"><h2 data-i18n="v.5.title">Essai gratuit 7 jours puis accès à vie</h2>
+      <span class="vdate" data-i18n="v.5.date">Juin 2026</span></div>
+    </div>
+    <ul>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.5.c.0">Profitez de l&#x27;application complète gratuitement pendant 7 jours.</span></li>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.5.c.1">Ensuite, débloquez Respicoon pour toujours en un seul paiement (3,99 €) — pas d&#x27;abonnement, aucun renouvellement.</span></li>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.5.c.2">Bouton « Restaurer mon achat » pour retrouver votre accès sur un nouvel appareil.</span></li>
+    </ul>
+  </article>
+  <article class="verz">
+    <div class="vh">
+      <span class="vn">2.1.0</span>
+      <div class="vmeta"><h2 data-i18n="v.6.title">Sauvegarde &amp; transfert entre appareils</h2>
+      <span class="vdate" data-i18n="v.6.date">Juin 2026</span></div>
+    </div>
+    <ul>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.6.c.0">Sauvegardez toutes vos données (séances, bilans, parcours, programmes perso) dans un fichier, depuis Réglages → Sauvegarde &amp; transfert.</span></li>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.6.c.1">Restaurez ce fichier sur un autre appareil — Android, iPhone, Mac ou PC — pour retrouver votre suivi. Le format est le même partout.</span></li>
+      <li><span class="tag"><span class="te">🌿</span><span data-i18n="ct.amelioration">Amélioration</span></span><span data-i18n="v.6.c.2">Tout reste hors ligne : rien n&#x27;est envoyé sur Internet, c&#x27;est vous qui transmettez le fichier (AirDrop, e-mail, cloud de votre choix…).</span></li>
+    </ul>
+  </article>
+  <article class="verz">
+    <div class="vh">
+      <span class="vn">2.0.0</span>
+      <div class="vmeta"><h2 data-i18n="v.7.title">Parcours guidés</h2>
+      <span class="vdate" data-i18n="v.7.date">Juin 2026</span></div>
+    </div>
+    <ul>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.7.c.0">Nouveaux parcours sur plusieurs jours : « 7 jours pour mieux dormir », « 5 jours anti-stress » et « 3 jours pour se recentrer ».</span></li>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.7.c.1">Chaque jour débloque la séance suivante — un rituel à suivre pas à pas, accessible depuis l&#x27;accueil.</span></li>
+      <li><span class="tag"><span class="te">🌿</span><span data-i18n="ct.amelioration">Amélioration</span></span><span data-i18n="v.7.c.2">Votre progression dans chaque parcours est mémorisée.</span></li>
+    </ul>
+  </article>
+  <article class="verz">
+    <div class="vh">
+      <span class="vn">1.9.0</span>
+      <div class="vmeta"><h2 data-i18n="v.8.title">Séance plus douce</h2>
+      <span class="vdate" data-i18n="v.8.date">Juin 2026</span></div>
+    </div>
+    <ul>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.8.c.0">Un petit décompte 3-2-1 vous laisse le temps de vous installer avant chaque séance.</span></li>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.8.c.1">Volume de l&#x27;ambiance réglable (Ambiances sonores → Volume), ajustable en direct.</span></li>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.8.c.2">La luminosité de l&#x27;écran baisse automatiquement pendant la séance (désactivable).</span></li>
+    </ul>
+  </article>
+  <article class="verz">
+    <div class="vh">
+      <span class="vn">1.8.1</span>
+      <div class="vmeta"><h2 data-i18n="v.9.title">Séance toujours lisible</h2>
+      <span class="vdate" data-i18n="v.9.date">Juin 2026</span></div>
+    </div>
+    <ul>
+      <li><span class="tag"><span class="te">🔧</span><span data-i18n="ct.correction">Correction</span></span><span data-i18n="v.9.c.0">En thème clair, la séance restait peu lisible : elle s&#x27;affiche désormais toujours sur un fond sombre apaisant, pour bien voir le souffle, les repères et le texte.</span></li>
+      <li><span class="tag"><span class="te">🌿</span><span data-i18n="ct.amelioration">Amélioration</span></span><span data-i18n="v.9.c.1">Un anneau mobile avec un point indique en temps réel jusqu&#x27;où inspirer (grand cercle) et expirer (petit cercle).</span></li>
+    </ul>
+  </article>
+  <article class="verz">
+    <div class="vh">
+      <span class="vn">1.8.0</span>
+      <div class="vmeta"><h2 data-i18n="v.10.title">Lune &amp; lotus embelli</h2>
+      <span class="vdate" data-i18n="v.10.date">Juin 2026</span></div>
+    </div>
+    <ul>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.10.c.0">Nouvelle visualisation « Lune » : un astre lumineux avec cratères et étoiles scintillantes, parfait pour le soir.</span></li>
+      <li><span class="tag"><span class="te">🌿</span><span data-i18n="ct.amelioration">Amélioration</span></span><span data-i18n="v.10.c.1">La « Fleur de lotus » a été redessinée, bien plus belle : pétales pointus dégradés sur deux rangées et cœur doré.</span></li>
+    </ul>
+  </article>
+  <article class="verz">
+    <div class="vh">
+      <span class="vn">1.7.0</span>
+      <div class="vmeta"><h2 data-i18n="v.11.title">Choisissez votre visualisation</h2>
+      <span class="vdate" data-i18n="v.11.date">Juin 2026</span></div>
+    </div>
+    <ul>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.11.c.0">5 visualisations de respiration au choix : Cercle, Cocon de lumière, Fleur de lotus, Lucioles et Ondes sur l&#x27;eau (Réglages → Visualisation de séance).</span></li>
+      <li><span class="tag"><span class="te">🌿</span><span data-i18n="ct.amelioration">Amélioration</span></span><span data-i18n="v.11.c.1">Toutes affichent les deux repères : grand cercle (jusqu&#x27;où inspirer) et petit cercle pointillé (jusqu&#x27;où expirer).</span></li>
+      <li><span class="tag"><span class="te">🌿</span><span data-i18n="ct.amelioration">Amélioration</span></span><span data-i18n="v.11.c.2">Le Cocon de lumière, doux et enveloppant, devient la visualisation par défaut.</span></li>
+    </ul>
+  </article>
+  <article class="verz">
+    <div class="vh">
+      <span class="vn">1.6.0</span>
+      <div class="vmeta"><h2 data-i18n="v.12.title">Repères de respiration plus clairs</h2>
+      <span class="vdate" data-i18n="v.12.date">Juin 2026</span></div>
+    </div>
+    <ul>
+      <li><span class="tag"><span class="te">🌿</span><span data-i18n="ct.amelioration">Amélioration</span></span><span data-i18n="v.12.c.0">Pendant la séance, deux repères apparaissent : un grand cercle (jusqu&#x27;où inspirer) et un petit cercle pointillé (jusqu&#x27;où expirer).</span></li>
+      <li><span class="tag"><span class="te">🌿</span><span data-i18n="ct.amelioration">Amélioration</span></span><span data-i18n="v.12.c.1">Le disque coloré grandit pile jusqu&#x27;au grand cercle à l&#x27;inspiration et rétrécit jusqu&#x27;au petit à l&#x27;expiration — on sait exactement quand s&#x27;arrêter.</span></li>
+      <li><span class="tag"><span class="te">🔧</span><span data-i18n="ct.correction">Correction</span></span><span data-i18n="v.12.c.2">Texte de la phase plus lisible au centre du cercle.</span></li>
+    </ul>
+  </article>
+  <article class="verz">
+    <div class="vh">
+      <span class="vn">1.5.0</span>
+      <div class="vmeta"><h2 data-i18n="v.13.title">Vibrations guidées &amp; ajustements</h2>
+      <span class="vdate" data-i18n="v.13.date">Juin 2026</span></div>
+    </div>
+    <ul>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.13.c.0">En mode vibration : une vibration pour démarrer l&#x27;inspiration, deux pour l&#x27;expiration — un repère pour respirer sans regarder l&#x27;écran.</span></li>
+      <li><span class="tag"><span class="te">🔧</span><span data-i18n="ct.correction">Correction</span></span><span data-i18n="v.13.c.1">L&#x27;ambiance « Battements de cœur » est désormais bien audible.</span></li>
+      <li><span class="tag"><span class="te">🌿</span><span data-i18n="ct.amelioration">Amélioration</span></span><span data-i18n="v.13.c.2">Le programme « Classique 365 » devient « Colibri 365 ».</span></li>
+    </ul>
+  </article>
+  <article class="verz">
+    <div class="vh">
+      <span class="vn">1.4.0</span>
+      <div class="vmeta"><h2 data-i18n="v.14.title">De vraies ambiances sonores</h2>
+      <span class="vdate" data-i18n="v.14.date">Juin 2026</span></div>
+    </div>
+    <ul>
+      <li><span class="tag"><span class="te">🌿</span><span data-i18n="ct.amelioration">Amélioration</span></span><span data-i18n="v.14.c.0">Les ambiances sont désormais de véritables enregistrements (vagues, pluie, forêt &amp; oiseaux, feu, vent, ruisseau, nuit, tambour, bol tibétain, battements de cœur) à la place des sons de synthèse.</span></li>
+      <li><span class="tag"><span class="te">🔧</span><span data-i18n="ct.correction">Correction</span></span><span data-i18n="v.14.c.1">Sons bien plus naturels et reposants pendant les séances.</span></li>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.14.c.2">Crédits et licences des sons ajoutés dans l&#x27;écran À propos.</span></li>
+    </ul>
+  </article>
+  <article class="verz">
+    <div class="vh">
+      <span class="vn">1.3.0</span>
+      <div class="vmeta"><h2 data-i18n="v.15.title">Nouvelles ambiances &amp; import clarifié</h2>
+      <span class="vdate" data-i18n="v.15.date">Juin 2026</span></div>
+    </div>
+    <ul>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.15.c.0">4 nouvelles ambiances : Ruisseau, Feu de cheminée, Vent léger et Battements de cœur.</span></li>
+      <li><span class="tag"><span class="te">🌿</span><span data-i18n="ct.amelioration">Amélioration</span></span><span data-i18n="v.15.c.1">Écran d&#x27;import des sons clarifié : formats audio acceptés (MP3, M4A, OGG, WAV, FLAC), photo et description guidés.</span></li>
+      <li><span class="tag"><span class="te">🌿</span><span data-i18n="ct.amelioration">Amélioration</span></span><span data-i18n="v.15.c.2">Bouton « Importer un son » plus visible dans le menu des ambiances.</span></li>
+    </ul>
+  </article>
+  <article class="verz">
+    <div class="vh">
+      <span class="vn">1.2.0</span>
+      <div class="vmeta"><h2 data-i18n="v.16.title">Sons personnalisés &amp; colibri réaliste</h2>
+      <span class="vdate" data-i18n="v.16.date">Juin 2026</span></div>
+    </div>
+    <ul>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.16.c.0">Importez vos propres sons d&#x27;ambiance (fichier audio + image + description) et choisissez-les pour vos séances.</span></li>
+      <li><span class="tag"><span class="te">🌿</span><span data-i18n="ct.amelioration">Amélioration</span></span><span data-i18n="v.16.c.1">Le colibri a été entièrement redessiné : plus détaillé et réaliste, avec plumage irisé, gorge rubis et flou de mouvement des ailes.</span></li>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.16.c.2">Cet écran « Nouveautés » : suivez ce que chaque version ajoute ou corrige.</span></li>
+    </ul>
+  </article>
+  <article class="verz">
+    <div class="vh">
+      <span class="vn">1.1.0</span>
+      <div class="vmeta"><h2 data-i18n="v.17.title">Identité Respicoon &amp; expérience sonore</h2>
+      <span class="vdate" data-i18n="v.17.date">Juin 2026</span></div>
+    </div>
+    <ul>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.17.c.0">Nouvelle identité « Respicoon » avec logo colibri (l&#x27;univers reste propulsé par Bengacoon).</span></li>
+      <li><span class="tag"><span class="te">🌿</span><span data-i18n="ct.amelioration">Amélioration</span></span><span data-i18n="v.17.c.1">Le cercle de respiration change de couleur : vert à l&#x27;inspiration, bleu à l&#x27;expiration.</span></li>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.17.c.2">Un colibri accompagne la séance : il bat des ailes à l&#x27;inspiration et se pose à l&#x27;expiration.</span></li>
+      <li><span class="tag"><span class="te">🌿</span><span data-i18n="ct.amelioration">Amélioration</span></span><span data-i18n="v.17.c.3">Ambiances sonores retravaillées (vagues, forêt &amp; oiseaux, pluie, tambour chamane, bol tibétain, nuit) bien plus douces.</span></li>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.17.c.4">Menu d&#x27;écoute et de choix des sons, avec réglage de la durée des vibrations.</span></li>
+    </ul>
+  </article>
+  <article class="verz">
+    <div class="vh">
+      <span class="vn">1.0.0</span>
+      <div class="vmeta"><h2 data-i18n="v.18.title">Première version</h2>
+      <span class="vdate" data-i18n="v.18.date">Juin 2026</span></div>
+    </div>
+    <ul>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.18.c.0">11 programmes guidés de cohérence cardiaque et de respiration.</span></li>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.18.c.1">Séance immersive, journal émotionnel, suivi, badges et statistiques.</span></li>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.18.c.2">Créateur de programme personnalisé, export PDF du suivi et mode thérapeute.</span></li>
+      <li><span class="tag"><span class="te">✨</span><span data-i18n="ct.ajout">Nouveau</span></span><span data-i18n="v.18.c.3">Rappels doux et fonctionnement 100 % hors ligne.</span></li>
+    </ul>
+  </article>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <strong>Respicoon</strong> — par Bengacoon · <span data-i18n="footer.langs">Disponible en 9 langues</span><br>
+    <a href="index.html" data-i18n="nav.home">Accueil</a> &nbsp;·&nbsp; <a href="privacy.html" data-i18n="nav.privacy">Confidentialité</a> &nbsp;·&nbsp; © 2026 Bengacoon
+    <p class="disc" data-i18n="footer.disc">Respicoon est une application de bien-être. Elle n'établit aucun diagnostic, ne constitue pas un traitement et ne remplace pas l'avis d'un professionnel de santé. En cas de trouble cardiaque ou respiratoire, demandez conseil à votre médecin.</p>
+  </div>
+</footer>
+<script src="i18n-data.js"></script>
+<script src="i18n.js"></script>
+</body>
+</html>
