@@ -631,14 +631,14 @@ window.I18N = {
   "fi": "7. Yhteystiedot"
  },
  "pv.contact": {
-  "en": "For any questions: <a href=\"mailto:jdviallat@gmail.com\">jdviallat@gmail.com</a>.",
-  "de": "Bei Fragen: <a href=\"mailto:jdviallat@gmail.com\">jdviallat@gmail.com</a>.",
-  "it": "Per qualsiasi domanda: <a href=\"mailto:jdviallat@gmail.com\">jdviallat@gmail.com</a>.",
-  "pt-PT": "Para qualquer questão: <a href=\"mailto:jdviallat@gmail.com\">jdviallat@gmail.com</a>.",
-  "es-ES": "Para cualquier pregunta: <a href=\"mailto:jdviallat@gmail.com\">jdviallat@gmail.com</a>.",
-  "sv": "Vid frågor: <a href=\"mailto:jdviallat@gmail.com\">jdviallat@gmail.com</a>.",
-  "nb": "For alle spørsmål: <a href=\"mailto:jdviallat@gmail.com\">jdviallat@gmail.com</a>.",
-  "fi": "Kaikissa kysymyksissä: <a href=\"mailto:jdviallat@gmail.com\">jdviallat@gmail.com</a>."
+  "en": "For any questions: <a href=\"mailto:bengacoon74@gmail.com\">bengacoon74@gmail.com</a>.",
+  "de": "Bei Fragen: <a href=\"mailto:bengacoon74@gmail.com\">bengacoon74@gmail.com</a>.",
+  "it": "Per qualsiasi domanda: <a href=\"mailto:bengacoon74@gmail.com\">bengacoon74@gmail.com</a>.",
+  "pt-PT": "Para qualquer questão: <a href=\"mailto:bengacoon74@gmail.com\">bengacoon74@gmail.com</a>.",
+  "es-ES": "Para cualquier pregunta: <a href=\"mailto:bengacoon74@gmail.com\">bengacoon74@gmail.com</a>.",
+  "sv": "Vid frågor: <a href=\"mailto:bengacoon74@gmail.com\">bengacoon74@gmail.com</a>.",
+  "nb": "For alle spørsmål: <a href=\"mailto:bengacoon74@gmail.com\">bengacoon74@gmail.com</a>.",
+  "fi": "Kaikissa kysymyksissä: <a href=\"mailto:bengacoon74@gmail.com\">bengacoon74@gmail.com</a>."
  },
  "g.top.par": {
   "en": "User guide",
