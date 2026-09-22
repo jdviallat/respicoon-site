@@ -48,6 +48,8 @@
   .stores{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:32px;position:relative}
   .store{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--nuit);font-weight:700;padding:13px 22px;border-radius:14px;text-decoration:none;font-size:15px;box-shadow:0 6px 18px rgba(0,0,0,.20);transition:transform .15s}
   .store:hover{transform:translateY(-2px)}
+  .dlcount{margin:14px 0 0;font-size:13.5px;opacity:.72;position:relative;text-align:center}
+  .dlcount b{font-weight:700;opacity:1}
   .store.soon{background:rgba(255,255,255,.14);color:#fff;box-shadow:none;border:1px solid rgba(255,255,255,.3)}
   .store .em{font-size:20px}
   .store small{display:block;font-weight:600;font-size:11px;opacity:.7}
@@ -140,6 +142,8 @@
         <span class="em">⬇︎</span><span><small data-i18n="store.dl">Télécharger l'</small>APK&nbsp;Android</span>
       </a>
     </div>
+    <p class="dlcount"><b>11</b> <span data-i18n="store.count">téléchargements</span></p>
+
     <p class="ver" data-i18n="hero.ver">Version 2.9.0 · Android 8+ · 9 langues</p>
   </div>
 </div>
